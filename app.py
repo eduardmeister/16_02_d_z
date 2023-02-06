@@ -1,11 +1,7 @@
 from datetime import datetime
-
 import json
-
 from flask import Flask, request
-
 from flask_sqlalchemy import SQLAlchemy
-
 import raw_data
 
 app = Flask(__name__)
