@@ -61,11 +61,11 @@ with app.app_context():
 
 #im nachfolgendem Text ist ein Fehler in der Zeitformatierung
 
-    #for ord_data in raw_data.orders:
-        #ord_data['start_date'] = datetime.strptime(ord_data['start_date'], '%m/%d/Y').date()
-        #ord_data['end_date'] = datetime.strptime(ord_data['end_date'], '%m/%d/Y').date()
-        #db.session.add(Order(**ord_data))
-        #db.session.commit()
+    for ord_data in raw_data.orders:
+        ord_data['start_date'] = datetime.strptime(ord_data['start_date'], '%m/%d/Y').date()
+        ord_data['end_date'] = datetime.strptime(ord_data['end_date'], '%m/%d/Y').date()
+        db.session.add(Order(**ord_data))
+        db.session.commit()
 
 
 if __name__ == '__main__':
