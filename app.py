@@ -59,8 +59,6 @@ with app.app_context():
         db.session.add(User(**usr_data))
         db.session.commit()
 
-#im nachfolgendem Text ist ein Fehler in der Zeitformatierung
-
     for ord_data in raw_data.orders:
         ord_data['start_date'] = datetime.strptime(ord_data['start_date'], '%m/%d/Y').date()
         ord_data['end_date'] = datetime.strptime(ord_data['end_date'], '%m/%d/Y').date()
